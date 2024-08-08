@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +7,7 @@ const SignIn = () => {
     password: "",
   });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +24,12 @@ const SignIn = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      setMessage(data.message);
+
+      if (response.ok) {
+        document.location.replace("/users"); // Redirect to UsersPage on successful sign in
+      } else {
+        setMessage(data.message);
+      }
     } catch (error) {
       setMessage("There was an error signing in.");
     }
