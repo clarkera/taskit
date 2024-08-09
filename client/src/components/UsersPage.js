@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-
 const UsersPage = () => {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
-
   useEffect(() => {
     // Fetch the user data from the backend API
     const fetchUsers = async () => {
       try {
         const response = await fetch("http://localhost:3001/api/user");
         const data = await response.json();
-
         if (response.ok) {
           setUsers(data.usersData);
         } else {
@@ -20,10 +17,8 @@ const UsersPage = () => {
         setError("There was an error fetching the users.");
       }
     };
-
     fetchUsers();
   }, []);
-
   return (
     <div>
       <h2>Signed In Users</h2>
@@ -38,5 +33,4 @@ const UsersPage = () => {
     </div>
   );
 };
-
 export default UsersPage;
