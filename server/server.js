@@ -2,7 +2,7 @@ const express = require("express");
 const dataBase = require("./config/connection");
 const routes = require("./routes");
 const cors = require("cors");
-const PORT = 3001;
+const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
