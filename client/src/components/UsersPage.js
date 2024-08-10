@@ -30,6 +30,23 @@ const UsersPage = () => {
           </li>
         ))}
       </ul>
+
+      <div id="myDIV" class="header">
+        <h2>My To-Do List</h2>
+
+        <input type="text" id="myInput" placeholder="Title..." />
+        <button onclick="newElement()" class="addBtn">
+          Add
+        </button>
+      </div>
+      <ul id="myUL">
+        <li class="task">Work on HTML - Jessica</li>
+        <li class="task checked">CSS - Beth</li>
+        <li class="task">JavaScript - Rachael</li>
+        <li class="task">We need snacks!</li>
+        <li class="task">Read MDN Web Docs</li>
+        <li class="task">Organize office</li>
+      </ul>
     </div>
   );
 };
