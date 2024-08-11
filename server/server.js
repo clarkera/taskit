@@ -29,3 +29,4 @@ const startServer = async () => {
   }
 };
 startServer();
+sequelize.sync({ force: true });
