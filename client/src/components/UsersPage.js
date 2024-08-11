@@ -30,7 +30,6 @@ const UsersPage = () => {
           </li>
         ))}
       </ul>
-
       <div id="myDIV" class="header">
         <h2>My To-Do List</h2>
 
@@ -50,4 +49,5 @@ const UsersPage = () => {
     </div>
   );
 };
+
 export default UsersPage;
