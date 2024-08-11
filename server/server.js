@@ -29,4 +29,3 @@ const startServer = async () => {
   }
 };
 startServer();
-dataBase.sync({ force: true });
