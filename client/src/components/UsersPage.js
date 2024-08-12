@@ -6,7 +6,7 @@ const UsersPage = () => {
     // Fetch the user data from the backend API
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/user");
+        const response = await fetch("/api/user");
         const data = await response.json();
         if (response.ok) {
           setUsers(data.usersData);
